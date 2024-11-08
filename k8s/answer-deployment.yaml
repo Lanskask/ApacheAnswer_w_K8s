@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: answer
+spec: 
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: answer
+  template:
+    metadata:
+      labels:
+        app: answer
+    spec: 
+      containers: 
+        - name: answer
+          image: apache/answer
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: answer-data
+              mountPath: /data
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 10
+      volumes:
+        - name: answer-data
+          persistentVolumeClaim:
+            claimName: answer-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: answer-service
+spec: 
+  selector:
+    app: answer
+  ports:
+    - protocol: TCP
+      port: 9080
+      targetPort: 80
+  type: LoadBalancer
+  
