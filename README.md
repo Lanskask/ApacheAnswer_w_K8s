@@ -1,5 +1,13 @@
 # A little project wihich lets you run Apache Answer server with k8s
 
+## How it looks
+
+The main page
+<img width="1511" alt="Screenshot 2024-11-08 at 02 05 10" src="https://github.com/user-attachments/assets/7b9bcf52-0750-4ce3-a86e-9a054e41e9ec">
+
+A question page
+<img width="1511" alt="Screenshot 2024-11-08 at 02 05 17" src="https://github.com/user-attachments/assets/b9222e38-73f9-4706-b1e5-d36df390d433">
+
 ## Before use
 
 Create .env file with your own values for postgres username, password and db name in the format:
