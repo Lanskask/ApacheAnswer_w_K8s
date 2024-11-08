@@ -1,13 +1,24 @@
 # A little project wihich lets you run Apache Answer server with k8s
 
+## Before use
+
+Create .env file with your own values for postgres username, password and db name in the format:
+```
+POSTGRES_USER=some_username
+POSTGRES_PASSWORD=some_password
+POSTGRES_DB=some_db_name
+```
+
 ## How to work with Docker
 
 ```bash
-# How to run colima docker daemon
+# Start lima docker daemon
 limactl start
-limactl stop
 
 docker-compose -f ./docker-compose.yaml up
+
+# Stop after use
+limactl stop
 ```
 
 ## How to run k8s
@@ -21,6 +32,9 @@ kubectl get po -A
 
 # Open web UI dashboard if you need
 minikube dashboard
+
+# Stop minikube
+minikube stop
 ```
 
 Generate k8s secrets file
