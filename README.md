@@ -50,6 +50,15 @@ kubectl apply -f k8s/answer-deployment.yaml
 kubectl apply -f k8s/postgres-deployment.yaml
 ```
 
+## To connect to Answers service
+
+```bash
+kubectl port-forward svc/answer-service 8080:8080
+
+minikube tunnel
+minikube service answer-service --url
+```
+
 ## Default setup for apache answer
 
 DB Host 
