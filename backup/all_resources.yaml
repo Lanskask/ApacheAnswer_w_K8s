@@ -1,0 +1,397 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2024-11-30T20:25:16Z"
+    generateName: little-app-99c678684-
+    labels:
+      app: little-app
+      pod-template-hash: 99c678684
+    name: little-app-99c678684-b6dxp
+    namespace: little-app-ns
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: little-app-99c678684
+      uid: 15f30857-e93b-43dc-b87e-41dce2df92ff
+    resourceVersion: "4770"
+    uid: 3a474480-0a40-4c9f-8605-1555a3119291
+  spec:
+    containers:
+    - image: nginx:latest
+      imagePullPolicy: Always
+      name: nginx
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-w4n45
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: ip-192-168-54-142.ec2.internal
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-w4n45
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2024-11-30T20:25:22Z"
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: "2024-11-30T20:25:16Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2024-11-30T20:25:22Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2024-11-30T20:25:22Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2024-11-30T20:25:16Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://03545fc888cb86104c1f2ffb7985703906c2a5bfb91b69688c88aa080e18985e
+      image: docker.io/library/nginx:latest
+      imageID: docker.io/library/nginx@sha256:0c86dddac19f2ce4fd716ac58c0fd87bf69bfd4edabfd6971fb885bafd12a00b
+      lastState: {}
+      name: nginx
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2024-11-30T20:25:21Z"
+    hostIP: 192.168.54.142
+    hostIPs:
+    - ip: 192.168.54.142
+    phase: Running
+    podIP: 192.168.62.174
+    podIPs:
+    - ip: 192.168.62.174
+    qosClass: BestEffort
+    startTime: "2024-11-30T20:25:16Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2024-11-30T20:25:16Z"
+    generateName: little-app-99c678684-
+    labels:
+      app: little-app
+      pod-template-hash: 99c678684
+    name: little-app-99c678684-wjkqb
+    namespace: little-app-ns
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: little-app-99c678684
+      uid: 15f30857-e93b-43dc-b87e-41dce2df92ff
+    resourceVersion: "4766"
+    uid: d7a33b21-a5a5-4412-8e8c-181713271f86
+  spec:
+    containers:
+    - image: nginx:latest
+      imagePullPolicy: Always
+      name: nginx
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-px59z
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: ip-192-168-6-188.ec2.internal
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-px59z
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: "2024-11-30T20:25:22Z"
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: null
+      lastTransitionTime: "2024-11-30T20:25:16Z"
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: "2024-11-30T20:25:22Z"
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: "2024-11-30T20:25:22Z"
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: null
+      lastTransitionTime: "2024-11-30T20:25:16Z"
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://1fe718949ef535b4bfdd57f4c048f54d95fb717aa91b0a5b779e66be4d7cd06c
+      image: docker.io/library/nginx:latest
+      imageID: docker.io/library/nginx@sha256:0c86dddac19f2ce4fd716ac58c0fd87bf69bfd4edabfd6971fb885bafd12a00b
+      lastState: {}
+      name: nginx
+      ready: true
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2024-11-30T20:25:21Z"
+    hostIP: 192.168.6.188
+    hostIPs:
+    - ip: 192.168.6.188
+    phase: Running
+    podIP: 192.168.22.157
+    podIPs:
+    - ip: 192.168.22.157
+    qosClass: BestEffort
+    startTime: "2024-11-30T20:25:16Z"
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"name":"little-app-service","namespace":"little-app-ns"},"spec":{"ports":[{"port":80,"protocol":"TCP","targetPort":80}],"selector":{"app":"little-app"},"type":"LoadBalancer"}}
+    creationTimestamp: "2024-11-30T20:25:17Z"
+    finalizers:
+    - service.kubernetes.io/load-balancer-cleanup
+    name: little-app-service
+    namespace: little-app-ns
+    resourceVersion: "4754"
+    uid: c96ed7f7-b90a-4ba1-8d40-090c0c6b41e1
+  spec:
+    allocateLoadBalancerNodePorts: true
+    clusterIP: 10.100.227.100
+    clusterIPs:
+    - 10.100.227.100
+    externalTrafficPolicy: Cluster
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - nodePort: 31127
+      port: 80
+      protocol: TCP
+      targetPort: 80
+    selector:
+      app: little-app
+    sessionAffinity: None
+    type: LoadBalancer
+  status:
+    loadBalancer:
+      ingress:
+      - hostname: ac96ed7f7b90a4ba18d40090c0c6b41e-543898409.us-east-1.elb.amazonaws.com
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    annotations:
+      deployment.kubernetes.io/revision: "1"
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{},"labels":{"app":"little-app"},"name":"little-app","namespace":"little-app-ns"},"spec":{"replicas":2,"selector":{"matchLabels":{"app":"little-app"}},"template":{"metadata":{"labels":{"app":"little-app"}},"spec":{"containers":[{"image":"nginx:latest","name":"nginx","ports":[{"containerPort":80}]}]}}}}
+    creationTimestamp: "2024-11-30T20:25:16Z"
+    generation: 1
+    labels:
+      app: little-app
+    name: little-app
+    namespace: little-app-ns
+    resourceVersion: "4775"
+    uid: fecc01fa-9fa9-4c90-9f95-eda67f8c7d7e
+  spec:
+    progressDeadlineSeconds: 600
+    replicas: 2
+    revisionHistoryLimit: 10
+    selector:
+      matchLabels:
+        app: little-app
+    strategy:
+      rollingUpdate:
+        maxSurge: 25%
+        maxUnavailable: 25%
+      type: RollingUpdate
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: little-app
+      spec:
+        containers:
+        - image: nginx:latest
+          imagePullPolicy: Always
+          name: nginx
+          ports:
+          - containerPort: 80
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 2
+    conditions:
+    - lastTransitionTime: "2024-11-30T20:25:22Z"
+      lastUpdateTime: "2024-11-30T20:25:22Z"
+      message: Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: "True"
+      type: Available
+    - lastTransitionTime: "2024-11-30T20:25:16Z"
+      lastUpdateTime: "2024-11-30T20:25:22Z"
+      message: ReplicaSet "little-app-99c678684" has successfully progressed.
+      reason: NewReplicaSetAvailable
+      status: "True"
+      type: Progressing
+    observedGeneration: 1
+    readyReplicas: 2
+    replicas: 2
+    updatedReplicas: 2
+- apiVersion: apps/v1
+  kind: ReplicaSet
+  metadata:
+    annotations:
+      deployment.kubernetes.io/desired-replicas: "2"
+      deployment.kubernetes.io/max-replicas: "3"
+      deployment.kubernetes.io/revision: "1"
+    creationTimestamp: "2024-11-30T20:25:16Z"
+    generation: 1
+    labels:
+      app: little-app
+      pod-template-hash: 99c678684
+    name: little-app-99c678684
+    namespace: little-app-ns
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: little-app
+      uid: fecc01fa-9fa9-4c90-9f95-eda67f8c7d7e
+    resourceVersion: "4773"
+    uid: 15f30857-e93b-43dc-b87e-41dce2df92ff
+  spec:
+    replicas: 2
+    selector:
+      matchLabels:
+        app: little-app
+        pod-template-hash: 99c678684
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: little-app
+          pod-template-hash: 99c678684
+      spec:
+        containers:
+        - image: nginx:latest
+          imagePullPolicy: Always
+          name: nginx
+          ports:
+          - containerPort: 80
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 2
+    fullyLabeledReplicas: 2
+    observedGeneration: 1
+    readyReplicas: 2
+    replicas: 2
+kind: List
+metadata:
+  resourceVersion: ""
